@@ -13,9 +13,9 @@ from flask_debugtoolbar import DebugToolbarExtension
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "ratatouille"
-app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False #for the redirect() old home page.
+# app.config["DEBUG_TB_INTERCEPT_REDIRECTS"] = False #for the redirect() old home page.
 
-debug = DebugToolbarExtension(app)
+# debug = DebugToolbarExtension(app)
 
 # since this app'name is NOT 'app.py' we need to define en environment variable when launching flask server run:
 #  FLASK_APP=myapp.py flask run
