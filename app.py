@@ -38,7 +38,7 @@ app.config['SECRET_KEY'] = "ratatouille"
 
 # $env:FLASK_DEBUG = "1"
 
-print("-------------HELLO!----------------")
+# print("-------------HELLO!----------------")
 
 # creating a route
 
