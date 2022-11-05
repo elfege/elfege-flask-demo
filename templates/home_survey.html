@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}SURVEY{% endblock %}
+{% block page_name %} SURVEY {% endblock %}
+{% block content %}
+
+<h3>{{title}}</h3>
+<h3>{{instructions}}</h3>
+
+<form action="/questions/0">
+    <button type="submit">TAKE THE SURVEY</button>
+</form>
+<form action="/restart">
+    <button type="submit">RESTART</button>
+</form>
+
+{%endblock%}

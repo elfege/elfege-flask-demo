@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Story Form{% endblock %}
+{% block page_name %} Build your own story!{% endblock %}
+{% block content %}
+
+<form action="/story">
+    <table>
+        <tr>
+            <td><h4>Place:</h4></td>
+            <td><input type="text" placeholder="insert place name" name="place"></td>
+        </tr>
+        <tr>
+            <td><h4>Adjective:</h4></td>
+            <td><input type="text" placeholder="insert Adjective" name="adjective"></td>
+        </tr>
+        <tr>
+            <td><h4>Noun:</h4></td>
+            <td><input type="text" placeholder="insert Noun" name="noun"></td>
+        </tr>
+        <tr>  
+            <td><h4>Verb:</h4></td>
+            <td><input type="text" placeholder="insert Verb" name="verb"></td>
+        </tr>
+        <tr>
+            <td><h4>Plural-noun:</h4></td>
+            <td><input type="text" placeholder="insert Plural Noun" name="plural-noun"></td>
+        </tr>
+        <tr>
+            <td>
+                <button>SUBMIT</button>
+            </td>
+        </tr>
+    </table>
+</form>
+{%endblock%}

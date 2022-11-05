@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}SURVEY{% endblock %}
+{% block page_name %} SURVEY {% endblock %}
+{% block content %}
+
+
+
+<form action={{nextq}}>
+    <div>
+        <h3>{{question}}</h3>
+        <h3>{{choices[0]}}<input type="radio" name="{{choices[0]}}"></h3>
+        <h3>{{choices[1]}}<input type="radio" name="{{choices[1]}}"></h3>
+    </div>
+    
+    {%if comment%}
+        <input type="text" height="200" width="200" placeholder="Please, tell us why" name="comments">
+    {%endif%}
+
+    <button>Next Question</button>
+</form>
+
+
+
+
+{%endblock%}

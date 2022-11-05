@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}SURVEY{% endblock %}
+{% block page_name %} SURVEY {% endblock %}
+{% block content %}
+
+
+<h1>THANK YOU!</h1>
+<h2>Here are your responses:</h2>
+
+{%for response in responses%}
+    <ul>
+        <li><b>Question {{loop.index}}</b></li>
+        <li>{{questions[loop.index - 1].question}} <b>Your answer:</b>{{response}}</li>
+    </ul>
+{%endfor%}
+
+<form action="/restart">
+<button>CLOSE SURVEY</button>
+</form>
+
+
+
+{%endblock%}

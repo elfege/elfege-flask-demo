@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}BOGGLE{% endblock %}
+{% block page_name %} BOGGLE {% endblock %}
+
+{% block content_top %}
+<p id="score"></p>
+<p id="timer"></p>
+{%endblock%}
+
+{% block sidecontent_l %}
+<div id="halloffameDiv">
+    <h4 style="text-align:center">HALL OF FAME</h4>
+    <form id="clearform" action="/clear/true">
+        <button id="halloffameButton" name="clear">CLEAR</button>
+    </form>
+    
+
+    <ul id="halloffame">
+
+
+    </ul>
+</div>
+{%endblock%}
+
+{% block content %}
+
+<table>
+    <tr>
+        <td colspan=5>
+            <h6 style="color:rgb(87, 93, 114)">WELCOME TO BOGGLE GAME!</h6>
+
+            <h6 id="wordstatus"></h6>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan=5>
+            <form id="wordform" action="/newboard">
+                <button class="gamecontrol" name="newboard">RESTART</button>
+
+            </form>
+        </td>
+    </tr>
+    {% for a in board %}
+    <tr>
+        {%for b in a%}
+
+        <td><button class="boardbuttons">{{b}}</button></td>
+
+        {%endfor%}
+    </tr>
+    {%endfor%}
+
+    <tr>
+        <td colspan=5>
+            <form action="/check-word" id="word">
+                <span id="guessspan">Type your guess then press "enter"</span><input type="text" id="guesstext"
+                    placeholder="enter your guess here" name="word">
+                <button>SUBMIT</button>
+            </form>
+        </td>
+    </tr>
+
+
+
+</table>
+
+{%endblock%}
+
+{% block sidecontent_r %}
+<h4 style="text-align:center">FOUND WORDS</h4>
+<ul id="goodWords">
+    
+</ul>
+{%endblock%}

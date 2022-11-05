@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}BOGGLE{% endblock %}
+{% block page_name %} BOGGLE {% endblock %}
+{% block content %}
+
+
+
+<div class="startDiv">
+    <h1 style="text-align:center">WELCOME TO BOGGLE GAME!</h1>
+
+    <form id="startForm" action="/game_page">
+        <button id="start">PLAY</button>
+    </form>
+</div> 
+<div class="startDiv">   
+    <form id="clearData" action="/clear/false">
+        <button id="start">CLEAR PREVIOUS GAMES</button>
+    </form>
+</div>
+
+
+
+{%endblock%}

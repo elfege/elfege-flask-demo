@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}FOREX{% endblock %}
+{% block page_name %} FOREX - CURRENCY CONVERTER {% endblock %}
+
+{% block content_top %}
+<p id="score"></p>
+<p id="timer"></p>
+{%endblock%}
+
+{% block sidecontent_l %}
+{%if rates%}
+<h4 style="text-align:center">CURRENT RATES</h4>
+
+<ul id="currentRates">
+
+    {%for rate in rates.items()%}
+    <li>{{rate[0]}}:{{rate[1]}}$</li>
+    {%endfor%}
+
+</ul>
+{%endif%}
+{%endblock%}
+
+{% block content %}
+<div class="currencyDropDown">
+    <form action="/convert" method="POST">
+        <div class="currencyDropDown">
+            <h4>Convert from:</h4>
+            <select name="FROM">
+                {% for currency in currencies %}
+                <option action="/curr_from" value="{{currency}}" name="{{currency}}">{{currency}}
+                </option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="currencyDropDown">
+            <h4>to:</h4>
+            <select name="TO">
+                {% for currency in currencies %}
+                <option action="/curr_to" value="{{currency}}" name="{{currency}}">{{currency}}</option>
+                {%endfor%}
+            </select>
+        </div>
+        <div class="currencyDropDown">
+            <input placeholder="amout" name="amount">
+            <button>CONVERT</button>
+        </div>
+    </form>
+</div>
+{%if result and result != "invalid entry" %}
+<div class="currencyDropDown">
+    <h2>Result:{{result}}</h2>
+</div>
+{%endif%}
+{%endblock%}
+
+{% block sidecontent_r %}{%endblock%}

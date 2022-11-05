@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}SPELL{% endblock %}
+{% block page_name %}SPELL ANY WORD{% endblock %}
+{% block content %}
+    
+    <form action="/spellfromform" method="POST">
+        <input type="text" placeholder="Insert your word here" name="wordfromform">
+        <button>SUBMIT</button>
+    </form>
+    {% for char in word%}
+        <h4 style="display:inline-block">{{char}}.</h4>
+    {%endfor%}
+
+{%endblock%}
