@@ -492,5 +492,5 @@ def conv():
     
     result = Converter(FROM, TO, amount).convert()
     
-    return render_template("forex_home.html", currencies=currencies, result=result)
+    return render_template("forex_home.html", currencies=currencies, result=result, rates=rates)
     
