@@ -23,9 +23,9 @@
     <nav class="navbar">
         <a href="/">HOME</a>
         <a href="/storyform">CREATE A STORY</a>
-        <a href="/lucky">LUCKY</a>
+        <!-- <a href="/lucky">LUCKY</a> -->
         <a href="/spell/spellit">SPELL</a>
-        <a href="/movies">MOVIES</a>
+        <!-- <a href="/movies">MOVIES</a> -->
         <a href="/survey">SURVEY</a>
         <a href="/boggle">BOGGLE</a>
         <a href="/forex">FOREX</a>
@@ -34,7 +34,7 @@
 
     <div class="content_top">
     <div class="pageName">
-        <h1>{% block page_name %}{% endblock %}</h1>
+        <h1 class="pageName">{% block page_name %}{% endblock %}</h1>
     </div>    
         {% block content_top %}
         {%endblock%}

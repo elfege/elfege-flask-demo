@@ -3,9 +3,9 @@ h1 {
 }
 
 body {
-    background-color: rgb(208, 197, 182);
-    position:relative;
-    left:-10px;
+    background-color: rgb(123, 122, 119);
+    position: relative;
+    left: -10px;
     overflow-y: scroll;
     /* Internet Explorer 10+ */
     -ms-overflow-style: none;
@@ -20,43 +20,95 @@ body::-webkit-scrollbar {
 
 }
 
+
 .content {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
     position: fixed;
     top: 25%;
-    left:25%;
-    right:25%;
-    bottom:25%;
+    left: 25%;
+    right: 25%;
+    bottom: 25%;
     margin: auto;
     width: 50%;
     height: 50%;
     z-index: 12;
     box-shadow: 2px 2px 2px teal;
 
-     overflow-y: scroll;
+    overflow-y: scroll;
     /* Internet Explorer 10+ */
     -ms-overflow-style: none;
     /* Firefox */
     scrollbar-width: none;
-
 }
+
 .content::-webkit-scrollbar {
     display: none;
     /* Safari and Chrome */
 }
+
+@media only screen and (max-width: 800px) {
+
+    /* For mobile phones: */
+    [class*="content"] {
+        top: 25%;
+        left: 5%;
+        right: 5%;
+        bottom: 25%;
+        margin: auto;
+        width: 70%;
+        height: 70%;
+        z-index: 12;
+    }
+
+    [class*="content_top"] {
+        top: 25%;
+        margin: auto;
+        width: 50%;
+        /* must be identical to content's class*/
+        height: 5%;
+        right: 5%;
+        /* must be identical to content's class*/
+        left: 5%;
+    }
+
+    [class*="content_r"] {
+        top: 25%;
+        left: 0%;
+        right: 0%;
+        bottom: 25%;
+        margin: auto;
+        width: 70%;
+        height: 50%;
+        z-index: 12;
+    }
+
+    [class*="content_l"] {
+        top: 25%;
+        left: 0%;
+        right: 0%;
+        bottom: 25%;
+        margin: auto;
+        width: 70%;
+        height: 50%;
+        z-index: 12;
+    }
+
+}
+
 .sidecontent_l {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
     position: fixed;
-    top: 25%; /* must be identical to content's class*/
+    top: 25%;
+    /* must be identical to content's class*/
     margin: auto;
     width: 20%;
     height: 50%;
-    left:1%;
-    float:left;
+    left: 1%;
+    float: left;
     box-shadow: 2px 2px 2px teal;
-    
+
     overflow-y: scroll;
     /* Internet Explorer 10+ */
     -ms-overflow-style: none;
@@ -68,18 +120,20 @@ body::-webkit-scrollbar {
     display: none;
     /* Safari and Chrome */
 }
+
 .sidecontent_r {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
     position: fixed;
-    top: 25%; /* must be identical to content's class*/
+    top: 25%;
+    /* must be identical to content's class*/
     margin: auto;
     width: 20%;
     height: 50%;
-    right:1%;
-    float:left;
+    right: 1%;
+    float: left;
     box-shadow: 2px 2px 2px teal;
-    
+
     overflow-y: scroll;
     /* Internet Explorer 10+ */
     -ms-overflow-style: none;
@@ -96,12 +150,15 @@ body::-webkit-scrollbar {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
     position: fixed;
-    top: 14%; 
+    top: 14%;
     margin: auto;
-    width: 50%; /* must be identical to content's class*/
-    height: 10%; 
-    right:25%;/* must be identical to content's class*/
-    left:25%;/* must be identical to content's class*/
+    width: 50%;
+    /* must be identical to content's class*/
+    height: 10%;
+    right: 25%;
+    /* must be identical to content's class*/
+    left: 25%;
+    /* must be identical to content's class*/
     box-shadow: 2px 2px 2px teal;
 }
 
@@ -111,50 +168,66 @@ table {
     width: 70%;
     height: 100%;
     margin: auto;
-    font-size:large;
+    font-size: large;
     text-align: center;
     padding: 10px 10px 10px 10px;
-    
+
 }
 
 td:hover {
     background-color: aqua;
 }
-.boardbuttons{
-    height:100%;
+
+.boardbuttons {
+    height: 100%;
     width: 100%;
-    font-size:100%;
+    font-size: 100%;
     font-weight: 600;
 }
+
 .gamecontrol {
     display: inline-block;
     width: 100px;
     height: 45px;
 }
+
 .currencyDropDown {
-    position:relative;
-    margin:50px;
+    position: relative;
+    margin: 50px;
     width: 200px;
 }
-#halloffameDiv{
-    position:relative;
-    margin:auto;
+
+#halloffameDiv {
+    position: relative;
+    margin: auto;
     font-size: small;
-    width:100%;
+    width: 100%;
 }
+
 #currentRates {
-    position:relative;
-    margin:auto;
-    font-size:xx-small;
-    left:-20%;
-    width:100%;
+    position: relative;
+    margin: auto;
+    font-size: xx-small;
+    left: 5%;
+    width: 100%;
 }
 
 #halloffameButton {
-    position:relative;
-    margin:auto;
+    position: relative;
+    margin: auto;
     font-size: small;
-    width:100%;
+    width: 100%;
+}
+
+
+#convertAmount {
+    position:relative;
+    width:35%;
+}
+
+#convertButton {
+    position:relative;
+    margin-top:20px;
 }
 
 
@@ -164,9 +237,9 @@ td:hover {
 }
 
 #wordform {
-    position:relative;
+    position: relative;
     margin: auto;
-    width:75%;
+    width: 75%;
 }
 
 
@@ -175,7 +248,7 @@ td:hover {
 
 
 .navbar {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     position: fixed;
     width: 101%;
     top: 0px;
@@ -195,7 +268,7 @@ td:hover {
 }
 
 .navbar a:hover {
-    background-color: rgb(106, 62, 9);
+    background-color: rgb(118, 116, 113);
     color: black;
 }
 
@@ -205,7 +278,8 @@ td:hover {
     text-align: center;
     position: fixed;
     margin: auto;
-    width: 50%; /* must be identical to content_top's */
+    width: 50%;
+    /* must be identical to content_top's */
     top: 15%;
 }
 
@@ -220,56 +294,58 @@ ul {
 }
 
 #score {
-    position:relative;
-    margin:auto;
-    left:5%;
+    position: relative;
+    margin: auto;
+    left: 5%;
     font-size: 20px;
 }
 
 #timer {
-    position:relative;
-    margin:auto;
-    left:5%;
+    position: relative;
+    margin: auto;
+    left: 5%;
     font-size: 20px;
 }
 
 #startForm {
-    position:relative;
-    margin:auto;
+    position: relative;
+    margin: auto;
     width: 100%;
 }
-#start   {
-    position:relative;
-    margin:auto;
-    width:50%;
-    left:25%;
-    height:50px;
-    border-radius:20px;
-    
+
+#start {
+    position: relative;
+    margin: auto;
+    width: 50%;
+    left: 25%;
+    height: 50px;
+    border-radius: 20px;
+
     background-color: rgb(147, 135, 135);
     color: white;
-    box-shadow:  -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0,0,0,0.2);
+    box-shadow: -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0, 0, 0, 0.2);
 
 }
-#start:active{
+
+#start:active {
     border-bottom-color: #0099ff;
     transform: translate3d(1px, 1px, 1px);
 }
 
 .startDiv {
     /* display:inline-block; */
-    position:relative;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:100px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
     width: 50%;
 }
 
 .homeText {
-    position:relative;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:100px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
     width: 50%;
     text-align: center;
 }
@@ -280,7 +356,7 @@ ul {
     font-weight: bolder;
     font-size: 20px;
     text-align: left;
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
 .error {
@@ -300,6 +376,21 @@ ul {
     font-size: 30px;
     text-align: justify;
 }
+
+.storyElement {
+    position: relative;
+    width: 20%;
+    font-size: inherit;
+    float: left;
+}
+
+.storyInput {
+    position: relative;
+    margin: auto;
+    width: 110%;
+}
+
+
 
 
 .homelink {
