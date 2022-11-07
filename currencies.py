@@ -58,8 +58,13 @@ def checkString(amount):
     False
     >>> bool(re.match('^[\.0-9]*$', "dfkdfhe dh"))
     False
+    >>> not amount
+    False
     
     """
+    
+    if not amount:
+        return False
     if re.match('^[\.0-9]*$', amount):
         return True
     else:
