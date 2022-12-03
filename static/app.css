@@ -47,55 +47,6 @@ body::-webkit-scrollbar {
     /* Safari and Chrome */
 }
 
-@media only screen and (max-width: 800px) {
-
-    /* For mobile phones: */
-    [class*="content"] {
-        top: 25%;
-        left: 5%;
-        right: 5%;
-        bottom: 25%;
-        margin: auto;
-        width: 70%;
-        height: 70%;
-        z-index: 12;
-    }
-
-    [class*="content_top"] {
-        top: 25%;
-        margin: auto;
-        width: 50%;
-        /* must be identical to content's class*/
-        height: 5%;
-        right: 5%;
-        /* must be identical to content's class*/
-        left: 5%;
-    }
-
-    [class*="content_r"] {
-        top: 25%;
-        left: 0%;
-        right: 0%;
-        bottom: 25%;
-        margin: auto;
-        width: 70%;
-        height: 50%;
-        z-index: 12;
-    }
-
-    [class*="content_l"] {
-        top: 25%;
-        left: 0%;
-        right: 0%;
-        bottom: 25%;
-        margin: auto;
-        width: 70%;
-        height: 50%;
-        z-index: 12;
-    }
-
-}
-
 .sidecontent_l {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
@@ -175,6 +126,22 @@ table {
 }
 
 td:hover {
+    background-color: aqua;
+}
+
+.boggleTable {
+    /* border: 1px solid rgb(125, 30, 30); */
+    position: relative;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    font-size: large;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+
+}
+
+.boggleTable td:hover {
     background-color: aqua;
 }
 
@@ -307,13 +274,13 @@ ul {
     font-size: 20px;
 }
 
-#startForm {
+.startDiv {
     position: relative;
     margin: auto;
     width: 100%;
 }
 
-#start {
+.startButton {
     position: relative;
     margin: auto;
     width: 50%;
@@ -327,12 +294,12 @@ ul {
 
 }
 
-#start:active {
+.startButton:active {
     border-bottom-color: #0099ff;
     transform: translate3d(1px, 1px, 1px);
 }
 
-.startDiv {
+.boggleForm {
     /* display:inline-block; */
     position: relative;
     margin-left: auto;
@@ -438,3 +405,5 @@ footer a:hover {
 .greetings {
     color: rgb(19, 19, 21)
 }
+
+

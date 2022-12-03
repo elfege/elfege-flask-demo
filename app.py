@@ -1,7 +1,7 @@
 import json
 from flask import Flask, jsonify, session, sessions, g, request, render_template, redirect, flash
-
 from random import randint
+
 from stories import Story
 from surveys import Survey
 from surveys import satisfaction_survey

@@ -1,0 +1,389 @@
+@media only screen and (max-width: 800px) {
+
+
+    h1 {
+        color: rgb(90, 90, 139);
+    }
+
+    body {
+        background-color: rgb(211, 209, 200);
+        position: relative;
+        left: -10px;
+        overflow-y: scroll;
+
+    }
+
+    .content {
+        border: 1px solid grey;
+        background-color: rgb(227, 235, 242);
+        position: fixed;
+        top: 25%;
+        left: 20%;
+        right: 25%;
+        bottom: 25%;
+        margin: auto;
+        width: 60%;
+        height: 80%;
+        z-index: 12;
+        box-shadow: 2px 2px 2px teal;
+    }
+
+
+    .sidecontent_l {
+        border: 1px solid grey;
+        background-color: rgb(227, 235, 242);
+        position: fixed;
+        /* float:inline-end; */
+        top: 25%;
+        /* must be identical to content's class*/
+        margin: auto;
+        width: 15%;
+        height: 50%;
+        left: 1%;
+        box-shadow: 2px 2px 2px teal;
+
+        overflow-y: scroll;
+        /* Internet Explorer 10+ */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
+    }
+
+    .sidecontent_r {
+        border: 1px solid grey;
+        background-color: rgb(227, 235, 242);
+        position: fixed;
+        top: 25%;
+        /* must be identical to content's class*/
+        margin: auto;
+        width: 15%;
+        height: 50%;
+        right: 1%;
+        float: left;
+        box-shadow: 2px 2px 2px teal;
+
+        overflow-y: scroll;
+        /* Internet Explorer 10+ */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
+    }
+
+    .content_top {
+        border: 1px solid grey;
+        background-color: rgb(227, 235, 242);
+        position: fixed;
+        top: 14%;
+        margin: auto;
+        width: 50%;
+        /* must be identical to content's class*/
+        height: 10%;
+        right: 25%;
+        /* must be identical to content's class*/
+        left: 25%;
+        /* must be identical to content's class*/
+        box-shadow: 2px 2px 2px teal;
+    }
+
+    table {
+        /* border: 1px solid rgb(125, 30, 30); */
+        position: relative;
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        font-size: small;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+
+    }
+
+    td:hover {
+        background-color: aqua;
+    }
+
+    .boggleTable {
+        /* border: 1px solid rgb(125, 30, 30); */
+        position: relative;
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        font-size: large;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+
+    }
+
+    .boggleTable td:hover {
+        background-color: aqua;
+    }
+
+    .boardbuttons {
+        height: 100%;
+        width: 100%;
+        font-size: 100%;
+        font-weight: 600;
+    }
+
+    .gamecontrol {
+        display: inline-block;
+        width: 100px;
+        height: 45px;
+    }
+
+    #halloffameDiv {
+        position: relative;
+        margin: auto;
+        font-size: small;
+        width: 100%;
+    }
+
+    .currencyDropDown {
+        position: relative;
+        margin: 50px;
+        width: 200px;
+        left:-10%;
+    }
+    #convertAmount {
+        position: relative;
+        width: 35%;
+        left:-20%;
+    }
+
+    #convertButton {
+        position: relative;
+        margin-top: 20px;
+        left:-20%;
+    }  
+
+    #currentRates {
+        position: relative;
+        margin-right: auto;
+        font-size: 8px;
+        left: -70%;
+        width: 20%;
+    }
+
+    #halloffameButton {
+        position: relative;
+        margin: auto;
+        font-size: small;
+        width: 100%;
+    }
+
+
+   
+
+
+
+    #guessspan {
+        font-size: 20px;
+    }
+
+    #wordform {
+        position: relative;
+        margin: auto;
+        width: 75%;
+    }
+
+
+
+
+
+
+    .navbar {
+        background-color: rgb(84, 80, 80);
+        position: fixed;
+        width: 101%;
+        top: 0px;
+    }
+
+
+
+    .navbar a {
+        float: left;
+        padding: 5px 5px;
+        font-size: 10px;
+        text-align: center;
+        color: rgb(235, 246, 246);
+        text-decoration: none;
+
+
+    }
+
+    .navbar a:hover {
+        background-color: rgb(118, 116, 113);
+        color: black;
+    }
+
+    .pageName {
+        /* border: 1px solid grey; */
+        /* text-shadow: 5px 5px 10px; */
+        text-align: center;
+        position: fixed;
+        margin: auto;
+        width: 50%;
+        /* must be identical to content_top's */
+        top: 15%;
+    }
+
+    .pageName h1 {
+        color: rgb(51, 57, 74);
+    }
+
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    #score {
+        position: relative;
+        margin: auto;
+        left: 5%;
+        font-size: 20px;
+    }
+
+    #timer {
+        position: relative;
+        margin: auto;
+        left: 5%;
+        font-size: 20px;
+    }
+
+    .startDiv {
+        position: relative;
+        margin:20px;
+        width:100%;
+
+    }
+
+    .startButton {
+        position: relative;
+        margin: auto;
+        width: 50%;
+        left: 15%;
+        height: 50px;
+        border-radius: 20px;
+
+        background-color: rgb(147, 135, 135);
+        color: white;
+        box-shadow: -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .startButton:active {
+        border-bottom-color: #0099ff;
+        transform: translate3d(1px, 1px, 1px);
+    }
+
+    .boggleForm {
+        /* display:inline-block; */
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        width: 80%;
+        left:5%;
+    }
+
+    .homeText {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        width: 50%;
+        text-align: center;
+    }
+
+    .messages {
+        position: relative;
+        width: 1000%;
+        font-weight: bolder;
+        font-size: 20px;
+        text-align: left;
+        text-transform: capitalize;
+    }
+
+    .error {
+        color: rgb(40, 17, 17);
+        background-color: rgb(133, 122, 122);
+    }
+
+    .success {
+        color: rgb(20, 20, 134);
+        background-color: antiquewhite;
+    }
+
+    .story {
+        position: relative;
+        top: 25%;
+        color: rgb(69, 13, 13);
+        font-size: 30px;
+        text-align: justify;
+    }
+
+    .storyElement {
+        position: relative;
+        width: 20%;
+        font-size: inherit;
+        float: left;
+    }
+
+    .storyInput {
+        position: relative;
+        margin: auto;
+        width: 110%;
+    }
+
+
+
+
+    .homelink {
+        margin: auto;
+        width: 50%;
+        padding-top: 50px;
+    }
+
+    footer {
+        background-color: rgb(89, 67, 67);
+        position: fixed;
+        bottom: 0px;
+        width: 101%;
+        height: 5%;
+    }
+
+    footer a {
+
+        position: relative;
+        margin: auto;
+        width: 50%;
+        top: 50%;
+        padding-top: 50px;
+        font-size: 17px;
+        color: rgb(235, 246, 246);
+        text-decoration: none;
+
+    }
+
+    footer div {
+
+        position: relative;
+        border: .5px solid rgb(105, 77, 77);
+        text-align: center;
+        margin: auto;
+        width: 50%;
+        height: 90%;
+    }
+
+    footer a:hover {
+        background-color: bisque;
+        color: black;
+    }
+
+    .greetings {
+        color: rgb(19, 19, 21)
+    }
+
+
+
+}

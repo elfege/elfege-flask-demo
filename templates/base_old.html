@@ -7,11 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/app.css">
 
+    <!-- viewport definition for @media screen smart device settings to work in css -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 
@@ -40,13 +43,14 @@
                 Flashing With Categories:
             -->
             {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                <ul class=messages>
-                    {% for category, message in messages %}
-                    <li class="{{ category }}">{{ message }}</li>  <!--categories are CSS classes to be styled in app.css! -->
-                    {% endfor %}
-                </ul>
-                {% endif %}
+            {% if messages %}
+            <ul class=messages>
+                {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+                <!--categories are CSS classes to be styled in app.css! -->
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% endwith %}
             <!-- 
                 Basic flashing:
