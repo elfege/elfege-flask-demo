@@ -147,3 +147,15 @@ function tdHandler(e) {
     input.val(input.val() + letter.toLowerCase())
 }
 
+document.addEventListener('DOMContentLoaded', function (event) {
+    if (smartDevice) {
+        $(".boardbuttons").css({
+            "postion": "relative",
+            "margin": "1px",
+            "width": "30px",
+            "height": "30px",
+            "radius" : "0px",
+            "color" : "black"
+        })
+    }
+})
