@@ -115,7 +115,7 @@
     .boggleTable {
         /* border: 1px solid rgb(125, 30, 30); */
         position: relative;
-        width: 70%;
+        width: 50%;
         height: 100%;
         margin: auto;
         font-size: large;
