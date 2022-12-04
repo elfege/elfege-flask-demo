@@ -10,7 +10,17 @@
         position: relative;
         left: -10px;
         overflow-y: scroll;
+        /* Internet Explorer 10+ */
+        -ms-overflow-style: none;
+        /* Firefox */
+        scrollbar-width: none;
 
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+        /* Safari and Chrome */
+    
     }
 
     .content {
@@ -176,7 +186,7 @@
 
 
     #guessspan {
-        font-size: 20px;
+        font-size: 10px;
     }
 
     #wordform {

@@ -13,7 +13,7 @@
     <form id="clearform" action="/clear/true">
         <button id="halloffameButton" name="clear">CLEAR</button>
     </form>
-    
+
 
     <ul id="halloffame">
 
@@ -56,6 +56,7 @@
             <form action="/check-word" id="word">
                 <span id="guessspan">Type your guess then press "enter"</span><input type="text" id="guesstext"
                     placeholder="enter your guess here" name="word">
+                <br>
                 <button>SUBMIT</button>
             </form>
         </td>
@@ -70,6 +71,6 @@
 {% block sidecontent_r %}
 <h4 style="text-align:center">FOUND WORDS</h4>
 <ul id="goodWords">
-    
+
 </ul>
 {%endblock%}
