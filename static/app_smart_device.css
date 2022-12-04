@@ -135,6 +135,14 @@
         font-weight: 600;
     }
 
+    /* prevent safari from giving rounded corners to all inputs, buttons and textareas */
+    /* buttons will inherit any CSS styles that are applied for other browsers */
+    input,
+    textarea {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+
     .gamecontrol {
         display: inline-block;
         width: 100px;
@@ -147,8 +155,9 @@
         font-size: small;
         width: 100%;
     }
-    #halloffame{
-        position:relative;
+
+    #halloffame {
+        position: relative;
         margin: auto;
         /* left:-40%; */
     }
@@ -156,11 +165,11 @@
     .score_hist {
         background-color: #a95555;
         border: 1px solid rgb(239, 223, 223);
-        color:white;
-        position:relative;
-        display:inline-block;
+        color: white;
+        position: relative;
+        display: inline-block;
         margin: auto;
-        width:100%;
+        width: 100%;
         font-size: 10px;
         /* left:-50%;  */
     }
