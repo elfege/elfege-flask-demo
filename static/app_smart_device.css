@@ -133,13 +133,12 @@
         width: 100%;
         font-size: 100%;
         font-weight: 600;
+      
+        -webkit-appearance: none; /* prevent safari from giving rounded corners to all inputs, buttons and textareas */
+        border-radius: 0;
+        padding-left:18%; /*Compensate for Safari's stupid default uneven padding...*/
     }
 
-    /* prevent safari from giving rounded corners to all inputs, buttons and textareas */
-    /* buttons will inherit any CSS styles that are applied for other browsers */
-    input[type=submit] {
-        -webkit-border-radius:0px;
-    }
 
     .gamecontrol {
         display: inline-block;
