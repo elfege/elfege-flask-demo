@@ -137,10 +137,8 @@
 
     /* prevent safari from giving rounded corners to all inputs, buttons and textareas */
     /* buttons will inherit any CSS styles that are applied for other browsers */
-    input,
-    textarea {
-        -webkit-appearance: none;
-        border-radius: 0;
+    input[type=submit] {
+        -webkit-border-radius:0px;
     }
 
     .gamecontrol {
