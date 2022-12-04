@@ -15,10 +15,10 @@
     </form>
 
 
-    <ul id="halloffame">
+    <div id="halloffame">
 
 
-    </ul>
+    </div>
 </div>
 {%endblock%}
 
@@ -27,8 +27,8 @@
 <table class="boggleTable">
     <tr>
         <td colspan=5>
-            <h6 style="color:rgb(87, 93, 114)">WELCOME TO BOGGLE GAME!</h6>
-
+            <h6 style="color:rgb(87, 93, 114)">FIND VALID ENGLISH WORDS WITHIN THE TABLE</h6>
+            <h6>Letters can be selected in all directions, providing they're adjacent</h6>
             <h6 id="wordstatus"></h6>
 
         </td>
@@ -54,7 +54,7 @@
     <tr>
         <td colspan=5>
             <form action="/check-word" id="word">
-                <span id="guessspan">Type your guess then press "enter"</span><input type="text" id="guesstext"
+                <span id="guessspan">You can also directly type your guess & press "enter"</span><input type="text" id="guesstext"
                     placeholder="enter your guess here" name="word">
                 <br>
                 <button>SUBMIT</button>
@@ -69,8 +69,8 @@
 {%endblock%}
 
 {% block sidecontent_r %}
-<h4 style="text-align:center">FOUND WORDS</h4>
+<h4>WORDS</h4>
 <ul id="goodWords">
-
+ <!-- li's implemented by js -->
 </ul>
 {%endblock%}

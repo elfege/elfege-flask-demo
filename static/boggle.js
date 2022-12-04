@@ -1,3 +1,5 @@
+const smartDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase());
+
 let score = 0
 const foundWords = new Set() // set for matching words found by the player
 let s = 60 // seconds for timer
@@ -117,12 +119,18 @@ async function endGameHandler() {
     const obj = resp.data
 
     for (var key in obj) {
-
+        console.log("game ", key)
         let game_numb = key
         let score = obj[key]["score"]
         let hits = obj[key]["hits"]
 
-        $("#halloffame").append(`<li>Game# ${game_numb}: ${score} in ${hits} hits</li>`)
+        if (smartDevice) {
+            const div = $("<div>")
+            div.attr("id", `game${game_numb}`).addClass("score_hist").text(`#${game_numb}: ${score}pts ${hits}hits`)
+            $("#halloffame").append(div)
+        } else {
+            if (!smartDevice) $("#halloffame").append(`<li>Game# ${game_numb}: ${score} in ${hits} hits</li>`)
+        }
 
     }
 
