@@ -1,76 +1,87 @@
 {% extends "base.html" %}
 {% block title %}BOGGLE{% endblock %}
-{% block page_name %} BOGGLE {% endblock %}
 
+
+<!-- TOP CONTENT -->
 {% block content_top %}
+{% block page_name %} BOGGLE {% endblock %}
 <p id="score"></p>
 <p id="timer"></p>
 {%endblock%}
+<!-- END OF TOP CONTENT -->
 
+<!-- SIDE CONTENT -->
 {% block sidecontent_l %}
 <div id="halloffameDiv">
     <h4 style="text-align:center">HALL OF FAME</h4>
     <form id="clearform" action="/clear/true">
         <button id="halloffameButton" name="clear">CLEAR</button>
     </form>
-
-
     <div id="halloffame">
-
-
     </div>
 </div>
 {%endblock%}
+<!-- END OF SIDE CONTENT -->
 
+<!-- MAIN CONTENT -->
 {% block content %}
+<div class="container">
+    <div class="row">
+       
+    </div>
+    <div class="row">
+        <div class="col-3"></div> 
+        <div class="col-3">
+            <table class="boggletable table">
+                <tr>
+                    <td colspan=5>
+                        <h6 style="color:rgb(87, 93, 114)">FIND VALID ENGLISH WORDS WITHIN THE TABLE</h6>
+                        <h6>Letters can be selected in all directions, providing they're adjacent</h6>
+                        <h6 id="wordstatus"></h6>
 
-<table class="boggleTable">
-    <tr>
-        <td colspan=5>
-            <h6 style="color:rgb(87, 93, 114)">FIND VALID ENGLISH WORDS WITHIN THE TABLE</h6>
-            <h6>Letters can be selected in all directions, providing they're adjacent</h6>
-            <h6 id="wordstatus"></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=5>
+                        <form id="wordform" action="/newboard">
+                            <button class="gamecontrol" name="newboard">RESTART</button>
 
-        </td>
-    </tr>
-    <tr>
-        <td colspan=5>
-            <form id="wordform" action="/newboard">
-                <button class="gamecontrol" name="newboard">RESTART</button>
+                        </form>
+                    </td>
+                </tr>
+                {% for a in board %}
+                <tr>
+                    {%for b in a%}
 
-            </form>
-        </td>
-    </tr>
-    {% for a in board %}
-    <tr>
-        {%for b in a%}
+                    <td><button class="btn btn-primary boardbuttons" style="width:100%">{{b}}</button></td>
 
-        <td><button class="boardbuttons">{{b}}</button></td>
+                    {%endfor%}
+                </tr>
+                {%endfor%}
 
-        {%endfor%}
-    </tr>
-    {%endfor%}
-
-    <tr>
-        <td colspan=5>
-            <form action="/check-word" id="word">
-                <span id="guessspan">You can also directly type your guess & press "enter"</span><input type="text" id="guesstext"
-                    placeholder="enter your guess here" name="word">
-                <br>
-                <button>SUBMIT</button>
-            </form>
-        </td>
-    </tr>
-
-
-
-</table>
+                <tr>
+                    <td colspan=5>
+                        <form action="/check-word" id="word">
+                            <span id="guessspan">You can also directly type your guess & press "enter"</span><input
+                                type="text" id="guesstext" placeholder="enter your guess here" name="word">
+                            <br>
+                            <button>SUBMIT</button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
 {%endblock%}
+<!-- END OF MAIN CONTENT -->
 
+<!-- SIDE CONTENT RIGHT -->
 {% block sidecontent_r %}
 <h4>WORDS</h4>
 <ul id="goodWords">
- <!-- li's implemented by js -->
+    {# li's implemented with js #}
 </ul>
 {%endblock%}
+<!-- END OF SIDE CONTENT -->
