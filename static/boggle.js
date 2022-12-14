@@ -7,7 +7,7 @@ let hits = 0 // record number of times the player has played
 
 $("#word").submit(handleSubmit) // listen for the player's text input events
 
-
+$("footer").remove()
 // GAME HANDLING
 async function handleSubmit(e) {
     e.preventDefault();

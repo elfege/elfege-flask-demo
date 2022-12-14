@@ -32,12 +32,12 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-sm-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container">
                         <div class="col-2">
                             <a href="/" style>
-                                <img class="logo"  src="{{url_for('static', filename='logo.jpg')}}"/>
+                                <img class="logo" src="{{url_for('static', filename='logo.jpg')}}" />
                             </a>
                         </div>
                         <div class="col-10">
@@ -68,63 +68,66 @@
     </div>
 
 
+    <div class="container">
+        <!-- TOP CONTENT -->
+        <div class="row">
+            <div class="col-sm-12" style="background-color:lightgrey; text-align:center">
+                {% block content_top %}
+                {% block page_name %}{% endblock %}
+                {%endblock%}
 
-    <!-- TOP CONTENT -->
-    <div class="row">
-        <div class="col-sm-12" style="background-color:lightgrey; text-align:center">
-            {% block content_top %}
-            {% block page_name %}{% endblock %}
-            {%endblock%}
 
+                <!-- ***********************FLASH******************************** -->
+                {%block flash%}
+
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p class="{{ category }}">{{ message }}</p>
+
+                    </div>
+                </div>
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+
+
+                {%endblock%}
+                <!-- ***********************END OF FLASH******************************** -->
+            </div>
         </div>
-    </div>
-    <!-- END OF TOP CONTENT -->
+        <!-- END OF TOP CONTENT -->
 
-    <br>
-
-
-    <div class="row content">
-        <!-- SIDE CONTENT -->
-        <div class="col-sm-3 sidenav">
-            {% block sidecontent_l %}{%endblock%}
-        </div>
-        <!-- END OF SIDE CONTENT -->
+        <br>
 
 
-        <!-- MAIN CONTENT -->
-        <div class="col-sm-6 right">
-            <!-- ***********************FLASH******************************** -->
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-            <div class="row .row-height">
-                <div class="col-xs-12" style="text-align:center;">
+        <div class="row">
+            <!-- SIDE CONTENT -->
+            <div class="col-sm-3 sidenav">
+                {% block sidecontent_l %}{%endblock%}
+            </div>
+            <!-- END OF SIDE CONTENT -->
 
-                    <ul class="message label label-danger">
-                        {% for category, message in messages %}
-                        <li class="{{ category }}">{{ message }}</li> {#categories are CSS classes to be styled in
-                        app.css! #}
-                        {% endfor %}
-                    </ul>
 
+            <!-- MAIN CONTENT -->
+            <div class="col-sm-6 right">
+                {% block content %}{% endblock %}
+            </div>
+            <!-- END OF MAIN CONTENT -->
+
+
+            <!-- SIDE CONTENT RIGHT -->
+            <div class="col-sm-3">
+                <div class="row content">
+                    {% block sidecontent_r %}{%endblock%}
                 </div>
             </div>
-            {% endif %}
-            {% endwith %}
-            <!-- ***********************END OF FLASH******************************** -->
-            <br>
-            {% block content %}{% endblock %}
+            <!-- END OF SIDE CONTENT -->
         </div>
-        <!-- END OF MAIN CONTENT -->
-
-
-        <!-- SIDE CONTENT RIGHT -->
-        <div class="col-sm-3">
-            <div class="row content">
-                {% block sidecontent_r %}{%endblock%}
-            </div>
-        </div>
-        <!-- END OF SIDE CONTENT -->
-    </div>
 
 
 

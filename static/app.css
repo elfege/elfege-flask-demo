@@ -214,10 +214,11 @@ table {
 
 
 .boardbuttons {
-    height: 100%;
-    width: 100%;
+    position:relative;
+    min-height: 120%;
+    min-width: 120%;
     font-size: 100%;
-    font-weight: 600;
+    font-weight: 900;
 }
 .boardbuttons:hover {
 background-color: aqua;
@@ -390,7 +391,7 @@ ul {
 
 .messages {
     position: relative;
-    width: 1000%;
+    width: 100%;
     font-weight: bolder;
     font-size: 20px;
     text-align: left;
@@ -398,8 +399,8 @@ ul {
 }
 
 .error {
-    color: rgb(40, 17, 17);
-    background-color: rgb(133, 122, 122);
+    color: rgb(241, 235, 235);
+    background-color: rgb(171, 31, 31);
 }
 
 .success {
