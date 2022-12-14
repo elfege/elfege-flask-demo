@@ -8,6 +8,7 @@ let hits = 0 // record number of times the player has played
 $("#word").submit(handleSubmit) // listen for the player's text input events
 
 $("footer").remove()
+
 // GAME HANDLING
 async function handleSubmit(e) {
     e.preventDefault();
@@ -48,7 +49,7 @@ function messageResult(message, cls) {
     console.log("message result = ", message)
     if (message != undefined) {
         if (message.includes("Added")) {
-            let msg = message.replace(/Added:/g, '') // capitalization done in css "text-transform:capitalize"
+            let msg = message.replace(/Added:/g, '') // capitalization done with css "text-transform:capitalize"
             $("#goodWords").append(`<li>${msg}</li>`).addClass(`messages ${cls}`)
             $("#wordstatus").text("GOOD WORK!").addClass(`messages ${cls}`)
             $("#wordstatus").css("font-size", "30px")

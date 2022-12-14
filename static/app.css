@@ -40,7 +40,7 @@ h1 {
     scrollbar-width: none;
 }
 
-.content::-webkit-scrollbar {
+.content_::-webkit-scrollbar {
     display: none;
     /* Safari and Chrome */
 }
@@ -74,7 +74,7 @@ h1 {
 .sidecontent_r {
     border: 1px solid grey;
     background-color: rgb(227, 235, 242);
-    position: fixed;
+    position: relative;
     top: 25%;
     /* must be identical to content's class*/
     margin: auto;
