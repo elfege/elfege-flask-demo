@@ -47,17 +47,25 @@ async function handleSubmit(e) {
 }
 function messageResult(message, cls) {
     console.log("message result = ", message)
+
     if (message != undefined) {
         if (message.includes("Added")) {
+            // if (!smartDevice) {
             let msg = message.replace(/Added:/g, '') // capitalization done with css "text-transform:capitalize"
             $("#goodWords").append(`<li>${msg}</li>`).addClass(`messages ${cls}`)
             $("#wordstatus").text("GOOD WORK!").addClass(`messages ${cls}`)
             $("#wordstatus").css("font-size", "30px")
             setTimeout(() => { $("#wordstatus").empty() }, 500);
+            // }
         }
         else {
-            $("#wordstatus").text(message).addClass(`messages ${cls}`)
-            setTimeout(() => { $("#wordstatus").empty() }, 1500);
+            if (smartDevice) {
+                alert(message)
+            }
+            else {
+                $("#wordstatus").text(message).addClass(`messages ${cls}`)
+                setTimeout(() => { $("#wordstatus").empty() }, 1500);
+            }
         }
     }
 }
@@ -83,6 +91,14 @@ async function setTimeInterval() {
 
     console.log("game started")
 
+    if (smartDevice) // remove top and bottom (side) contents during game
+    {
+
+        $("#topContent").addClass("d-none") // just the game's name
+        $("#sideContentLeft").addClass("d-none") // hall of fame
+        // $("#sideContentRight").addClass("d-none") // found words... 
+    }
+
     Interval0 = setInterval(timerHandler, 1000)
 
 }
@@ -102,6 +118,13 @@ function timerHandler() {
 //END OF GAME
 async function endGameHandler() {
     console.log("handling end game")
+
+    if (smartDevice) // restore top and bottom (side) contents 
+    {
+        $("#topContent").removeClass("d-none")
+        $("#sideContentLeft").removeClass("d-none")
+        $("#sideContentRight").removeClass("d-none")
+    }
 
     $(".boardbuttons").off("click") // remove board buttons event listner
     $("#word").off("submit") // remove submit form's event listener 
@@ -155,8 +178,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
             "margin": "1px",
             "width": "30px",
             "height": "30px",
-            "radius" : "0px",
-            "color" : "black"
+            "radius": "0px",
+            "color": "black"
         })
     }
 })

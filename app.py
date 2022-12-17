@@ -384,7 +384,7 @@ def cl(ingame):
     else:
         clear_session()
         get_new_board() # must not leave board value empty
-        return redirect("/")
+        return redirect("/boggle")
 
 @app.route("/endgame", methods=["POST"])
 def end():

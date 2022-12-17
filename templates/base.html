@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/static/app.css">
     <link rel="stylesheet" href="/static/bootstrap.css">
 
@@ -70,7 +70,7 @@
 
     <div class="container">
         <!-- TOP CONTENT -->
-        <div class="row">
+        <div class="row" id="topContent">
             <div class="col-sm-12" style="background-color:lightgrey; text-align:center">
                 {% block content_top %}
                 {% block page_name %}{% endblock %}
@@ -107,7 +107,7 @@
 
         <div class="row">
             <!-- SIDE CONTENT -->
-            <div class="col-sm-3 sidenav">
+            <div class="col-sm-3 sidenav" id="sideContentLeft">
                 {% block sidecontent_l %}{%endblock%}
             </div>
             <!-- END OF SIDE CONTENT -->
@@ -121,7 +121,7 @@
 
 
             <!-- SIDE CONTENT RIGHT -->
-            <div class="col-sm-3">
+            <div class="col-sm-3" id="sideContentRight">
                 <div class="row content">
                     {% block sidecontent_r %}{%endblock%}
                 </div>

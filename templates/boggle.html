@@ -5,8 +5,7 @@
 <!-- TOP CONTENT -->
 {% block content_top %}
 {% block page_name %} BOGGLE {% endblock %}
-<p id="score"></p>
-<p id="timer"></p>
+
 {%endblock%}
 {%block flash%}
 {%endblock%}
@@ -16,9 +15,7 @@
 {% block sidecontent_l %}
 <div id="halloffameDiv">
     <h4 style="text-align:center">HALL OF FAME</h4>
-    <form id="clearform" action="/clear/true">
-        <button id="halloffameButton" name="clear">CLEAR</button>
-    </form>
+
     <div id="halloffame">
     </div>
 </div>
@@ -28,39 +25,59 @@
 <!-- MAIN CONTENT -->
 {% block content %}
 
-<table class="boggletable">
+
+<table class="table">
     <tr>
         <td colspan=5>
-            <h6 style="color:rgb(87, 93, 114)">FIND VALID ENGLISH WORDS WITHIN THE TABLE</h6>
+            <h4 style="color:rgb(87, 93, 114); text-align:center">FIND VALID ENGLISH WORDS WITHIN THE TABLE</h4>
             <h6>Letters can be selected in all directions, providing they're adjacent</h6>
             <h6 id="wordstatus"></h6>
-
         </td>
     </tr>
     <tr>
-        <td colspan=5>
+        <td colspan=2>
             <form id="wordform" action="/newboard">
                 <button class="btn btn-primary gamecontrol" name="newboard">RESTART</button>
-
+            </form>
+        </td>
+        <td colspan=3>
+            <form id="clearform" action="/clear/true">
+                <button class="btn btn-primary gamecontrol" name="clear">CLEAR</button>
             </form>
         </td>
     </tr>
-    {% for a in board %}
+</table>
+
+<div class="container">
+    <div class="col-xs-12" >
+        <table class="boggletable" >
+            {% for a in board %}
+
+            <tr>
+                {%for b in a%}
+
+                <td><button class="btn btn-primary boardbuttons" style="width:100%">{{b}}</button></td>
+
+                {%endfor%}
+            </tr>
+
+            {%endfor%}
+        </table>
+    </div>
+</div>
+
+<table class="table">
     <tr>
-        {%for b in a%}
-
-        <td><button class="btn btn-primary boardbuttons" style="width:100%">{{b}}</button></td>
-
-        {%endfor%}
+        <td colspan=5>
+            <span id="score"></span>
+            <span id="timer"></span>
+        </td>
     </tr>
-    {%endfor%}
-
     <tr>
         <td colspan=5>
             <form action="/check-word" id="word">
-                <span id="guessspan">You can also directly type your guess & press "enter"</span><input type="text"
-                    id="guesstext" placeholder="enter your guess here" name="word">
-                <br>
+                <span id="guessspan">Dial or type your guess & submit</span>
+                <input type="text" id="guesstext" placeholder="enter your guess here" name="word">
                 <button class="btn btn-primary">SUBMIT</button>
             </form>
         </td>
@@ -79,5 +96,6 @@
         {# li's implemented with js #}
     </ul>
 </div>
+
 {%endblock%}
 <!-- END OF SIDE CONTENT -->
