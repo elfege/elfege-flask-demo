@@ -1,150 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/static/app.css">
     <link rel="stylesheet" href="/static/bootstrap.css">
 
-
     <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
     <script src="http://unpkg.com/babel-standalone"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
-        rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+  </head>
 
-    <title>{% block title %}{% endblock %}</title>
-</head>
-
-<body>
+  <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container">
-                        <div class="col-2">
-                            <a href="/" style>
-                                <img class="logo" src="{{url_for('static', filename='logo.jpg')}}" />
-                            </a>
-                        </div>
-                        <div class="col-10">
-                            <!-- Collapse button -->
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
+      <div class="row">
+        <div class="col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <div class="col-2">
+                <a href="https://thytalk.com" target="_blank">
+                  <img class="logo" src="{{url_for('static', filename='logo.jpg')}}"/>
+                </a>
+              </div>
+              <div class="col-10">
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
 
-                            <!-- Collapsible content -->
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                                    <li><a class="nav-link" href="/">HOME</a></li>
-                                    <li><a class="nav-link" href="/storyform">CREATE A STORY</a></li>
-                                    <li><a class="nav-link" href="/spell/spellit">SPELL</a></li>
-                                    <li><a class="nav-link" href="/survey">SURVEY</a></li>
-                                    <li><a class="nav-link" href="/boggle">BOGGLE</a></li>
-                                    <li><a class="nav-link" href="/forex">FOREX</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li>
+                      <a class="nav-link" href="/">HOME</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/storyform">CREATE A STORY</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/spell/spellit">SPELL</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/survey">SURVEY</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/boggle">BOGGLE</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/forex">FOREX</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            </nav>
-        </div>
+          </div>
+        </nav>
+      </div>
     </div>
-
 
     <div class="container">
-        <!-- TOP CONTENT -->
-        <div class="row" id="topContent">
-            <div class="col-sm-12" style="background-color:lightgrey; text-align:center">
-                {% block content_top %}
-                {% block page_name %}{% endblock %}
-                {%endblock%}
+      <!-- TOP CONTENT -->
+      <div class="row" id="topContent">
+        <div class="col-sm-12" style="background-color:lightgrey; text-align:center">
+          {% block content_top %}
+            {% block page_name %}{% endblock %}
+            {%endblock%}
 
+            <!-- ***********************FLASH******************************** -->
+            {%block flash%}
 
-                <!-- ***********************FLASH******************************** -->
-                {%block flash%}
-
-
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
+              {% with messages = get_flashed_messages(with_categories = true) %}
+              {% if messages %}
                 {% for category, message in messages %}
-                <div class="row">
+                  <div class="row">
                     <div class="col-sm-12">
-                        <p class="{{ category }}">{{ message }}</p>
+                      <p class="{{ category }}">{{ message }}</p>
 
                     </div>
-                </div>
+                  </div>
                 {% endfor %}
 
-                {% endif %}
-                {% endwith %}
+              {% endif %}
+              {% endwith %}
 
-
-                {%endblock%}
-                <!-- ***********************END OF FLASH******************************** -->
+              {%endblock%}
+              <!-- ***********************END OF FLASH******************************** -->
             </div>
-        </div>
-        <!-- END OF TOP CONTENT -->
+          </div>
+          <!-- END OF TOP CONTENT -->
 
-        <br>
+          <br>
 
-
-        <div class="row">
+          <div class="row">
             <!-- SIDE CONTENT -->
             <div class="col-sm-3 sidenav" id="sideContentLeft">
-                {% block sidecontent_l %}{%endblock%}
-            </div>
-            <!-- END OF SIDE CONTENT -->
+              {% block sidecontent_l %}{%endblock%}
+              </div>
+              <!-- END OF SIDE CONTENT -->
 
-
-            <!-- MAIN CONTENT -->
-            <div class="col-sm-6 right">
+              <!-- MAIN CONTENT -->
+              <div class="col-sm-6 right">
                 {% block content %}{% endblock %}
-            </div>
-            <!-- END OF MAIN CONTENT -->
+              </div>
+              <!-- END OF MAIN CONTENT -->
 
-
-            <!-- SIDE CONTENT RIGHT -->
-            <div class="col-sm-3" id="sideContentRight">
+              <!-- SIDE CONTENT RIGHT -->
+              <div class="col-sm-3" id="sideContentRight">
                 <div class="row content">
-                    {% block sidecontent_r %}{%endblock%}
+                  {% block sidecontent_r %}{%endblock%}
+                  </div>
                 </div>
+                <!-- END OF SIDE CONTENT -->
+              </div>
+
             </div>
-            <!-- END OF SIDE CONTENT -->
-        </div>
 
+            <footer style="background-color: #ffede7;">
 
+              <div class="text p-12" style="background-color: rgba(239, 221, 221, 0.2);">
+                <a style="color:grey" href="/">© 2022 Copyright: - elfege.com</a>
+              </div>
+            </footer>
 
-    </div>
+          </body>
+          <script src="/static/boggle.js"></script>
 
-    <footer style="background-color: #ffede7;">
-
-        <div class="text p-12" style="background-color: rgba(239, 221, 221, 0.2);">
-            <a style="color:grey" href="/">© 2022 Copyright: - elfege.com</a>
-        </div>
-    </footer>
-
-
-
-
-
-</body>
-<script src="/static/boggle.js"></script>
-
-</html>
+        </html>
